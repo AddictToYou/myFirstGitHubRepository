@@ -9,6 +9,7 @@ import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -31,16 +32,17 @@ public class SeleniumProcessor implements PageProcessor{
 		
 	}
 	public static void main(String[] args) throws Exception {
-		try {
+		/*try {
 			System.setProperty("webdriver.chrome.driver", "D:\\Program Files\\chromedriver_win32\\chromedriver.exe");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		}
-		WebDriver webDriver = new ChromeDriver();
+		}*/
+//		WebDriver webDriver = new ChromeDriver();
+		WebDriver webDriver = new HtmlUnitDriver();
 		List<String> urlList = new ArrayList<String>();
-		urlList.add("http://www.chinajob.gov.cn/EmploymentServices/content/2017-04/03/content_1298120.htm");		
-//		urlList.add("http://roll.news.qq.com/#");	
+//		urlList.add("http://www.chinajob.gov.cn/EmploymentServices/content/2017-04/03/content_1298120.htm");		
+		urlList.add("http://news.qq.com/articleList/rolls/");
 //		urlList.add("http://roll.news.qq.com/");		
 //		urlList.add("http://roll.news.qq.com/");		
 //		DesiredCapabilities caps = new DesiredCapabilities();
@@ -57,10 +59,21 @@ public class SeleniumProcessor implements PageProcessor{
 		}
 		
 		Thread.sleep(50000);
-		WebElement webElement = webDriver.findElement(By.xpath("/html"));
+//		String str = webDriver.getPageSource();
+//		System.out.println(str);      div[@class='listInfo']/div[@class='tabBox']/
+//		List<WebElement> webElements = webDriver.findElements(By.xpath("//ul[@class='titMode']/li/a/span"));
+//		for(WebElement webElement : webElements){
+//			String title = webElement.getText();
+////			String url = webElement.
+//			System.out.println(title);
+//		}
+		WebElement webElement = webDriver.findElement(By.xpath("//ul[@class='titMode']/li/a/span"));
+		String title = webElement.getText();
+//		String url = webElement.
+		System.out.println(title);
 //		Page page = new Page();
 //		page = webElement.getAttribute("outerHTML");
-        System.out.println(webElement.getAttribute("outerHTML"));
+//        System.out.println(webElement.getAttribute("outerHTML"));
 //		for(WebElement i : webElement){
 //        	System.out.println(i.getText());
 //        }
