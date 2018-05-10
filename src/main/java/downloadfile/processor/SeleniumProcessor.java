@@ -40,9 +40,7 @@ public class SeleniumProcessor implements PageProcessor{
 		WebDriver webDriver = new ChromeDriver();
 		List<String> urlList = new ArrayList<String>();
 		urlList.add("http://www.chinajob.gov.cn/EmploymentServices/content/2017-04/03/content_1298120.htm");		
-//		urlList.add("http://roll.news.qq.com/#");		
-//		urlList.add("http://roll.news.qq.com/");		
-//		urlList.add("http://roll.news.qq.com/");		
+//		urlList.add("http://roll.news.qq.com/#");	
 //		urlList.add("http://roll.news.qq.com/");		
 //		urlList.add("http://roll.news.qq.com/");		
 //		DesiredCapabilities caps = new DesiredCapabilities();
